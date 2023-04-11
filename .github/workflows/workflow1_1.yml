@@ -20,5 +20,5 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.ACTION_SECRET }}" \
-            https://api.github.com/repos/JaydipZala/Hello-World/actions/workflows/workflow3/dispatches \
+            https://api.github.com/repos/JaydipZala/Hello-World/actions/workflows/53948520/dispatches \
             -d '{"ref":"main", "inputs": {"flavor":"dev"}}'
