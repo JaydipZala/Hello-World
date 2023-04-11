@@ -14,5 +14,5 @@ jobs:
           curl -X POST https://api.github.com/repos/JaydipZala/Hello-World/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTION_SECRET }} \
-          --data '{"event_type": "workflow2-dispactch", "client_payload": { "message": "job successful" } }'
+          --data '{"event_type": "workflow2-dispatch", "client_payload": { "message": "job successful" } }'
       - uses: actions/checkout@v3
