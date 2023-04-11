@@ -1,7 +1,7 @@
 name: workflow1
 on: 
   repository_dispatch:
-    types: workflow1-dispactch
+    types: workflow1-dispatch
 
 jobs:
   build:
