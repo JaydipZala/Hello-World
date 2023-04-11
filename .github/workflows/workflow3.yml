@@ -10,7 +10,7 @@ on:
   repository_dispatch:
     types: workflow3-dispatch
 jobs:
-  cypress-run:
+  job:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Triggering Wokflow 3"
