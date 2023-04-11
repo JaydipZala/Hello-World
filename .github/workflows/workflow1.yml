@@ -22,4 +22,5 @@ jobs:
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.ACTION_SECRET }} \
           --data '{"event_type": "${{ github.event.inputs.workflow }}", "client_payload": { "message": "job successful", "flavor": "dev" } }'
+          -d '{"ref":"main", "inputs": {"flavor":"dev"}}'
       - uses: actions/checkout@v3
