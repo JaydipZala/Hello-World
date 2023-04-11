@@ -1,0 +1,21 @@
+name: workflow3
+on:
+  workflow_dispatch:
+    inputs:
+      flavor:
+        required: true
+        type: string
+        description: "Flavor variant to use (dev, qa, integration, prod)"
+        default: 'prod'
+  repository_dispatch:
+    types: workflow3-dispatch
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering Wokflow 3"
+     
+      - name: Data Received from workflow1
+        run:  echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.message }}'"
+      - name: Checkout
+        uses: actions/checkout@v2
