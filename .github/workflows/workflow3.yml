@@ -16,6 +16,6 @@ jobs:
       - run: echo "Triggering Wokflow 3"
      
       - name: Data Received from workflow1
-        run:  echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.message }}'"
+        run:  echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.message }}, input is ${{ github.event.inputs.flavor }}'"
       - name: Checkout
         uses: actions/checkout@v2
