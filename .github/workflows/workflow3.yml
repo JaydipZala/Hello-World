@@ -6,7 +6,7 @@ on:
         required: true
         type: string
         description: "Flavor variant to use (dev, qa, integration, prod)"
-        default: 'prod'
+        default: ${{ github.event.client_payload.message }
   repository_dispatch:
     types: workflow3-dispatch
 jobs:
@@ -16,6 +16,6 @@ jobs:
       - run: echo "Triggering Wokflow 3"
      
       - name: Data Received from workflow1
-        run: echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.message }}', input is '${{ github.event.client_payload.flavor }}'"
+        run: echo "Event '${{ github.event.action }}' received from '${{ github.event.inputs.flavor }}', input is '${{ github.event.client_payload.flavor }}'"
       - name: Checkout
         uses: actions/checkout@v2
