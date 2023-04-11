@@ -1,0 +1,14 @@
+name: workflow2
+on:
+  repository_dispatch:
+    types: workflow2-dispatch
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering Wokflow 2"
+     
+      - name: Data Received from workflow1
+        run:  echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.message }}'"
+      - name: Checkout
+        uses: actions/checkout@v2
