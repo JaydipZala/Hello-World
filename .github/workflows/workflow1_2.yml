@@ -1,7 +1,6 @@
 name: workflow1_2
 on: 
-  repository_dispatch:
-    types: workflow1-dispatch
+  workflow_dispatch:
 
 jobs:
   my_job:
