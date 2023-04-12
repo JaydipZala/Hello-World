@@ -5,8 +5,8 @@ on:
       workflow:
         required: true
         type: string
-        description: "Workflow to dispatch next (workflow2-dispatch, workflow3-dispatch)"
-        default: 'workflow3-dispatch'
+        description: "Workflow id to dispatch next (workflow2-dispatch / 53947030, workflow3-dispatch / 53948520)"
+        default: '53948520'
   repository_dispatch:
     types: workflow1-dispatch
 
@@ -20,5 +20,5 @@ jobs:
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.ACTION_SECRET }}" \
-            https://api.github.com/repos/JaydipZala/Hello-World/actions/workflows/53948520/dispatches \
+            "https://api.github.com/repos/JaydipZala/Hello-World/actions/workflows/${{ github.event.inputs.workflow }}/dispatches" \
             -d '{"ref":"main", "inputs": {"flavor":"dev"}}'
