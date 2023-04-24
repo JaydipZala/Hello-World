@@ -1,0 +1,18 @@
+name: Fastlane
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string  
+        description: The env to use
+
+jobs:
+  env:
+    outputs:
+      runner: ${{ steps.set_runner.outputs.runner }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "environment: ${{ github.event.inputs.environment }}"
