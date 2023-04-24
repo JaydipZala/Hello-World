@@ -1,0 +1,16 @@
+name: Test Dispatcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: string  
+        description: The env to use
+
+jobs:
+  test_dispatcher:
+    name: Test Dispatcher
+    uses: JaydipZala/workflows/.github/workflows/test.yaml
+    with:
+      environment: ${{ github.event.inputs.environment }}
