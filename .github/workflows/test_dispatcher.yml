@@ -11,6 +11,6 @@ on:
 jobs:
   test_dispatcher:
     name: Test Dispatcher
-    uses: JaydipZala/Hello-Wolrd/.github/workflows/test.yml@main
+    uses: JaydipZala/Hello-World/.github/workflows/test.yml@main
     with:
       environment: ${{ github.event.inputs.environment }}
