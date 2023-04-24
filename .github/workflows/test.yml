@@ -7,6 +7,12 @@ on:
         required: true
         type: string  
         description: The env to use
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string  
+        description: The env to use
 
 jobs:
   env:
